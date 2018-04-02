@@ -4,7 +4,7 @@ learn something about computer system and program.
 here is the main points of cs
 
 一、 数据结构 & 算法 <br/>
-   * 数据结构（参考严蔚敏的数据结构）<br/>
+   *数据结构（参考严蔚敏的数据结构）<br/>
       1.线性表<br/>
          （1）线性表的顺序表示和实现<br/>
          （2）顺序表的链式表示和实现：线性链表、循环链表、双向链表<br/>
