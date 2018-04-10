@@ -1,0 +1,24 @@
+void shell_insert(int *arr, int dk, int len) {
+    for (int i = dk; i < len; i++) {
+        int temp = arr[i];
+        int index = i-1;
+        while(index >=0 && temp < arr[index]) {
+            arr[index+1] = arr[index];
+            index--;
+        }
+        arr[index+1] = temp;
+    }
+}
+
+void shell_sort(int *arr, int len) {
+    for (int i = len/2; i > 0; i=i/2) {
+        shell_insert(arr, i, len);
+    }
+}
+
+ int main(void) {
+     int a[10] = { 15,0,6,89,45,100,5,10001,78,999 };
+     shell_sort(a, 10);
+     
+     return 0;
+ }
