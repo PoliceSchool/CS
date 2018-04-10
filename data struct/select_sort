@@ -1,0 +1,22 @@
+void select_sort(int *arr, int len) {
+	for (int i = 0; i < len-1; i++) {
+		int min = i;
+		for (int j = i+1; j < len; j++) {
+			if (arr[min] > arr[j]) {
+				min = j;
+			}
+		}
+		if (min != i) {
+			int temp = arr[i];
+			arr[i] = arr[min];
+			arr[min] = temp;
+		}
+	}
+}
+
+ int main(void) {
+     int a[10] = { 15,0,6,89,45,100,5,10001,78,999 };
+     select_sort(a, 10);
+     
+     return 0;
+ }
