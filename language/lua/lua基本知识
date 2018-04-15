@@ -1,0 +1,7 @@
+默认情况下，lua的变量总是全局的
+
+lua的8个基本数据类型：nil、boolean、number、string、userdata、function、thread、table
+    nil：表示没有任何有效值，
+    booblean：
+    
+    
