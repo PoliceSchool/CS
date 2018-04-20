@@ -1,3 +1,4 @@
+#include <stdio.h>
 //简易版的scanf
 int my_scanf(char str[]) {
     int i = 0;
@@ -14,6 +15,15 @@ int my_printf(char str[]) {
         putchar(str[i++]);
     }
     return i+1;
+}
+
+/简易版的strlen
+int my_strlen(char str[]) {
+     if(str == NULL)
+         return 0;
+    int len = 0;
+    while(str[len++] != '\0');
+    return len - 1; //不包含最后的'\0'
 }
 
 int main(void) {
