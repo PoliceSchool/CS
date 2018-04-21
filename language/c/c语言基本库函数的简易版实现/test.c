@@ -44,6 +44,21 @@ int my_strcmp(const char *str1, const char *str2) {
 	return ret;
 }
 
+//简易版strcat，不过在vs2015上运行好像有点问题
+char* my_strcat(char *str1, char *str2) {
+	if (str1 == NULL || str2 == NULL)
+		return 0;
+
+	char *address = str1;
+
+	while (*str1 != '\0')
+		++str1;
+	while (*str2 != '\0')
+		*str1++ = *str2++;
+	*str1 = '\0';
+	return address;
+}
+
 int main(void) {
     char str[10] = {0};
     my_scanf(str);
