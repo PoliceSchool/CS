@@ -36,6 +36,14 @@ char* my_strcpy(char to[], char from[]) {
 	return to;
 }
 
+//简易版strcmp
+int my_strcmp(const char *str1, const char *str2) {
+	int ret = 0;
+	while (!(ret = *str1 - *str2) && *str2)
+		++str1, ++str2;
+	return ret;
+}
+
 int main(void) {
     char str[10] = {0};
     my_scanf(str);
