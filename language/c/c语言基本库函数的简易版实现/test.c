@@ -17,13 +17,23 @@ int my_printf(char str[]) {
     return i+1;
 }
 
-/简易版的strlen
+//简易版的strlen
 int my_strlen(char str[]) {
      if(str == NULL)
          return 0;
     int len = 0;
     while(str[len++] != '\0');
     return len - 1; //不包含最后的'\0'
+}
+
+//简易版的strcpy
+char* my_strcpy(char to[], char from[]) {
+	int i = 0;
+	if (to == NULL || from == NULL)
+		return 0;
+	while ((to[i] = from[i]) != '\0')
+		++i;
+	return to;
 }
 
 int main(void) {
