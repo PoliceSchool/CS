@@ -1,0 +1,37 @@
+package com.ps.ews;
+
+import java.net.URI;
+
+import microsoft.exchange.webservices.data.core.ExchangeService;
+import microsoft.exchange.webservices.data.core.enumeration.misc.ExchangeVersion;
+import microsoft.exchange.webservices.data.core.enumeration.property.BodyType;
+import microsoft.exchange.webservices.data.core.service.item.EmailMessage;
+import microsoft.exchange.webservices.data.credential.WebCredentials;
+import microsoft.exchange.webservices.data.property.complex.MessageBody;
+
+public class Test {
+
+	public static void main(String[] args) throws Exception {
+		ExchangeService service = new ExchangeService(ExchangeVersion.Exchange2010_SP2);
+		service.setCredentials(new WebCredentials("username", "password", "domain"));
+		service.setUrl(new URI(""));
+		
+		EmailMessage message = new EmailMessage(service);
+		// 邮件主题
+		message.setSubject("Hello kevindiao!");
+		message.setBody(new MessageBody());
+		// 指定发送邮件的格式，可以是Text和Html格式
+		message.getBody().setBodyType(BodyType.Text);
+		// 邮件内容
+		message.getBody().setText("Sent using the EWS Managed API.");
+		// 可以添加多个邮件人.也可以添加一个集合，用
+		// message.ToRecipients.AddRange(IList toEmailAddress_list)
+		message.getToRecipients().add("username@mail.com");
+		// 保存草稿
+		//message.save();
+		// 只发送不保存邮件
+		// message.Send();
+		// 发送并保存已发送邮件
+		message.sendAndSaveCopy();
+	}
+}
